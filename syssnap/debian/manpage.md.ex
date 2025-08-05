@@ -112,12 +112,12 @@ available via the **info**(1) system.
 
 # AUTHOR
 
-Muhammad Umar Khan <muhammad.tauha@outlook.com>
+Muhammad Tauha Kashif <muhammad.tauha@outlook.com>
 :   Wrote this manpage for the Debian system.
 
 # COPYRIGHT
 
-Copyright © 2007 Muhammad Umar Khan
+Copyright © 2007 Muhammad Tauha Kashif
 
 This manual page was written for the Debian system (and may be used by
 others).

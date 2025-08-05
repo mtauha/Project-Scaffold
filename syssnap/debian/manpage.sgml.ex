@@ -25,7 +25,7 @@ manpage.1: manpage.sgml
        allowed: see man(7), man(1). -->
   <!ENTITY dhsection   "<manvolnum>SECTION</manvolnum>">
   <!ENTITY dhemail     "<email>muhammad.tauha@outlook.com</email>">
-  <!ENTITY dhusername  "Muhammad Umar Khan">
+  <!ENTITY dhusername  "Muhammad Tauha Kashif">
   <!ENTITY dhucpackage "<refentrytitle>Syssnap</refentrytitle>">
   <!ENTITY dhpackage   "syssnap">
 
