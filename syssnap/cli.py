@@ -22,9 +22,14 @@ def main():
         help="Output format",
     )
     parser.add_argument(
-        "--include", type=str, help="Comma-separated modules to include (default: all)"
+        "--include",
+        type=str,
+        nargs="*",
+        help="Comma-separated modules to include (default: all)",
     )
-    parser.add_argument("--exclude", type=str, help="Comma-separated modules to skip")
+    parser.add_argument(
+        "--exclude", type=str, nargs="*", help="Comma-separated modules to skip"
+    )
     parser.add_argument(
         "--out", type=str, help="Write output to file (default: stdout)"
     )
@@ -60,8 +65,30 @@ def main():
         return
 
     # Filter modules
-    include = set(args.include.split(",")) if args.include else modules
-    exclude = set(args.exclude.split(",")) if args.exclude else set()
+    if args.include:
+        # Handle both "module1,module2" and "module1 module2" formats
+        include_list = []
+        for item in args.include:
+            if "," in item:
+                include_list.extend(item.split(","))
+            else:
+                include_list.append(item)
+        include = set(mod.strip() for mod in include_list if mod.strip())
+    else:
+        include = modules
+
+    if args.exclude:
+        # Handle both "module1,module2" and "module1 module2" formats
+        exclude_list = []
+        for item in args.exclude:
+            if "," in item:
+                exclude_list.extend(item.split(","))
+            else:
+                exclude_list.append(item)
+        exclude = set(mod.strip() for mod in exclude_list if mod.strip())
+    else:
+        exclude = set()
+
     final_modules = include - exclude
 
     # Collect system data
