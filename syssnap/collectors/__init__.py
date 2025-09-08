@@ -14,6 +14,11 @@ from . import (
     crontab,
     users,
     hardware,
+    kernelmods,
+    limits,
+    firewall,
+    mounts,
+    netconns,
 )
 
 ALL_COLLECTORS = {
@@ -32,4 +37,9 @@ ALL_COLLECTORS = {
     "crontab": crontab,
     "users": users,
     "hardware": hardware,
+    "kernelmods": kernelmods,
+    "limits": limits,
+    "firewall": firewall,
+    "mounts": mounts,
+    "netconns": netconns,
 }
